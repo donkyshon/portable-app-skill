@@ -1,0 +1,23 @@
+{
+  "name": "portable-app",
+  "version": "1.1.0",
+  "description": "Portable Windows programs end to end: make your own or third-party apps leave no traces, then ship them as one setup exe with a first-run downloader, auto-updates, optional mods and a config app.",
+  "author": {
+    "name": "Donkyshon",
+    "url": "https://github.com/Donkyshon"
+  },
+  "homepage": "https://github.com/Donkyshon/portable-app-skill",
+  "repository": "https://github.com/Donkyshon/portable-app-skill",
+  "license": "MIT-0",
+  "keywords": [
+    "portable",
+    "windows",
+    "portableapps",
+    "launcher",
+    "usb",
+    "skills",
+    "installer",
+    "sfx",
+    "webportable"
+  ]
+}

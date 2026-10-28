@@ -1,0 +1,28 @@
+@echo off
+chcp 65001 >nul
+setlocal
+
+set "APP_NAME=Spotify WebPortable"
+set "APP_VERSION=2.6"
+set "SOURCE=%~dp0%APP_NAME%"
+set "OUTPUT=%~dp0%APP_NAME% v%APP_VERSION%.exe"
+set "SFX_MODULE=%~dp0tools\7zsd_All.sfx"
+set "SEVEN_ZIP=%ProgramFiles%\7-Zip\7z.exe"
+
+rem No parenthesized blocks below: a ")" in a path such as "Folder (2)" would break them.
+if not exist "%SOURCE%" echo Source folder not found. & exit /b 1
+if not exist "%SFX_MODULE%" echo SFX module not found. & exit /b 1
+if not exist "%SEVEN_ZIP%" echo 7-Zip not found. & exit /b 1
+
+set "PAYLOAD=%TEMP%\%APP_NAME%-payload.7z"
+if exist "%PAYLOAD%" del "%PAYLOAD%"
+
+rem -x!Data skips only the Data folder in the root of the package, not every folder named Data.
+"%SEVEN_ZIP%" a -t7z -mx9 -m0=lzma2 "%PAYLOAD%" "%SOURCE%\*" -x!Data -xr!*.log
+if errorlevel 1 echo Packing failed. & exit /b 1
+
+copy /b "%SFX_MODULE%" + "%~dp0sfx-config.txt" + "%PAYLOAD%" "%OUTPUT%" >nul
+if errorlevel 1 echo Joining failed. & exit /b 1
+
+del "%PAYLOAD%"
+echo Built: %OUTPUT%

@@ -1,0 +1,31 @@
+{
+  "name": "donkyshon-skills",
+  "owner": {
+    "name": "Donkyshon"
+  },
+  "metadata": {
+    "description": "Skills by Donkyshon",
+    "version": "1.1.0"
+  },
+  "plugins": [
+    {
+      "name": "portable-app",
+      "source": "./",
+      "description": "Portable Windows programs end to end: make your own or third-party apps leave no traces, then ship them as one setup exe with a first-run downloader, auto-updates, optional mods and a config app.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Donkyshon"
+      },
+      "license": "MIT-0",
+      "category": "development",
+      "keywords": [
+        "portable",
+        "windows",
+        "launcher",
+        "installer",
+        "sfx",
+        "webportable"
+      ]
+    }
+  ]
+}

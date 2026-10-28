@@ -1,0 +1,34 @@
+; Shared by <App>Portable.exe (launcher) and <App>Config.exe (config).
+; Lives in Data\, so updates of the package never overwrite it.
+
+[Launch]
+ProgramExecutable=Vendor\Vendor.exe
+WorkingDirectory=%DATA%
+Arguments=
+
+[Options]
+AutoUpdate=1
+UpdateIntervalHours=24
+AutoCleanCache=1
+AllowMultipleCopies=0
+
+[Network]
+Proxy=
+UserAgent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+
+[Vendor]
+UpdateUrl=https://example.com/vendor/latest.json
+UrlPrefix=https://example.com/vendor/setup-
+UrlPostfix=.exe
+Unpack=7z
+
+[Cleanup]
+1=%DATA%\AppData\Local\Vendor\Cache
+2=%DATA%\AppData\Roaming\Vendor\logs
+
+[Mod.Example]
+Title=Example mod
+Enabled=0
+Source=https://api.github.com/repos/owner/repo/releases/latest
+Asset=*.zip
+Apply=cmd /c "{ModDir}\install.cmd" "{AppDir}"

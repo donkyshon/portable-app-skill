@@ -1,0 +1,13 @@
+;The comment below contains SFX script commands
+
+Path=%USERPROFILE%\Desktop
+SavePath
+Title=Spotify WebPortable 2.6
+Text
+{
+Portable build. Settings and cache stay in the Data folder next to the program.
+Updating over an old copy keeps your Data.
+}
+Overwrite=1
+Shortcut=D, "Spotify WebPortable\SpotifyPortable.exe", "", "Spotify Portable", "Spotify Portable"
+Setup=Spotify WebPortable\SpotifyPortable.exe

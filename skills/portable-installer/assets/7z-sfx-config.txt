@@ -1,0 +1,12 @@
+;!@Install@!UTF-8!
+Title="Spotify WebPortable 2.6"
+GUIMode="1"
+InstallPath="%USERPROFILE%\\Desktop\\Spotify WebPortable"
+ExtractTitle="Spotify WebPortable"
+ExtractDialogText="Choose a folder for the portable copy. Your Data folder is kept on update."
+ExtractPathText="Install to"
+ExtractCancelText="Cancel"
+Shortcut="Du,{%%T\\SpotifyPortable.exe},{},{},{Spotify Portable}"
+RunProgram="nowait:\"%%T\\SpotifyPortable.exe\""
+OverwriteMode="1"
+;!@InstallEnd@!
